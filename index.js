@@ -1,6 +1,8 @@
-var http = require('http');
+const func = who => {
+    console.log(who);
 
-http.createServer(function (reg, res) {
-    res.writeHead(200, {'Content-Type': 'text/html'});
-    res.end('Hello World!');
-}).listen(4000);
+} 
+var Start = setInterval(func, 3 * 1000, 'Hej verden');
+setTimeout(function( ){
+    clearInterval( Start );
+}, 17 * 1000);
