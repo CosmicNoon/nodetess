@@ -1,8 +1,13 @@
-const func = who => {
-    console.log(who);
+const express = require('express');
+const app = express();
+const fetch = require('node-fetch');
 
-} 
-var Start = setInterval(func, 3 * 1000, 'Hej verden');
-setTimeout(function( ){
-    clearInterval( Start );
-}, 17 * 1000);
+app.get("/", (reg, res) => {
+    var title = "Velkommen";
+    var content = "uwu";
+
+    res.render('pages/index', {
+        title: title,
+        content: content
+    });
+});
